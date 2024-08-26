@@ -45,3 +45,19 @@ vim.api.nvim_create_autocmd("InsertEnter", {
     vim.opt.cursorcolumn = false
   end,
 })
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    -- disable highlight after yank
+    vim.highlight.on_yank({ timeout = 0 })
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufNewFile", {
+  pattern = {
+    "php",
+  },
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})

@@ -6,7 +6,7 @@ return {
         "phpactor",
         "json-lsp",
         "html-lsp",
-        "yaml-language-server",
+        -- "yaml-language-server",
         "bash-language-server",
         "css-lsp",
         -- javascript, typescript
