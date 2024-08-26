@@ -6,6 +6,7 @@ return {
         "phpactor",
         "json-lsp",
         "html-lsp",
+        "sqlls",
         -- "yaml-language-server",
         "bash-language-server",
         "css-lsp",
@@ -19,6 +20,7 @@ return {
         -- go
         "goimports",
         "gomodifytags",
+        --
         "hadolint",
         "impl",
         "lua-language-server",

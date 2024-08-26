@@ -2,6 +2,7 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
 
+-- set indentation for languages
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("shiftWidth"),
   pattern = {
@@ -32,6 +33,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+-- enable cursor crosshair highlight in normal mode
 vim.api.nvim_create_autocmd("InsertLeave", {
   callback = function()
     vim.opt.cursorline = true
@@ -39,6 +41,7 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   end,
 })
 
+-- disable cursor crosshair highlight in insert mode
 vim.api.nvim_create_autocmd("InsertEnter", {
   callback = function()
     vim.opt.cursorline = false
@@ -46,9 +49,9 @@ vim.api.nvim_create_autocmd("InsertEnter", {
   end,
 })
 
+-- disable selection highlight after yank
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
-    -- disable highlight after yank
     vim.highlight.on_yank({ timeout = 0 })
   end,
 })
