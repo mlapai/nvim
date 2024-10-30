@@ -1,8 +1,8 @@
 vim.keymap.set("n", "[<space>", "O<Esc>", { desc = "Insert blank row before", remap = true })
 vim.keymap.set("n", "]<space>", "o<Esc>", { desc = "Insert blank row after", remap = true })
 
-vim.keymap.set("n", "[e", "ddkkp", { desc = "Move line down", remap = true })
-vim.keymap.set("n", "]e", "ddp", { desc = "Move line up", remap = true })
+vim.keymap.set("n", "[e", "ddkP", { desc = "Move line up", remap = true })
+vim.keymap.set("n", "]e", "ddp", { desc = "Move line down", remap = true })
 
 -- unbind redudant buffer keys to bind -> jump to previous buffer
 vim.keymap.del("n", "<Leader><Tab>d")
