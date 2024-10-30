@@ -6,6 +6,8 @@ return {
       formatters_by_ft = {
         -- Set default fixer for languages.
         php = { "php_cs_fixer" },
+        typescript = { "prettier" },
+        javascript = { "prettier" },
       },
     },
   },

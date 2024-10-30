@@ -7,9 +7,7 @@ vim.api.nvim_create_autocmd("FileType", {
   group = augroup("shiftWidth"),
   pattern = {
     "php",
-    "yaml",
-    "yml",
-    "json",
+    -- "json",
   },
   callback = function()
     vim.opt.shiftwidth = 4
@@ -20,6 +18,23 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("shiftWidth2"),
+  pattern = {
+    "js",
+    "ts",
+    "yml",
+    "yaml",
+  },
+  callback = function()
+    vim.opt.shiftwidth = 2
+    vim.opt.tabstop = 2 -- A TAB character looks like 4 spaces
+    vim.opt.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
+    vim.opt.softtabstop = 2 -- Number of spaces inserted instead of a TAB character
+    vim.opt.shiftwidth = 2 -- Number of spaces inserted when indenting
+  end,
+})
+
 -- disable autoformat for languages
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = {
@@ -27,9 +42,29 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     "yaml",
     "yml",
     "json",
+    "ts",
+    "js",
   },
   callback = function()
     vim.b.autoformat = false
+  end,
+})
+
+-- disable diagnostics for vendor files
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = {
+    -- vendor folder
+    "**/node_modules/**",
+    "node_modules",
+    "/node_modules/*",
+    -- vendor folder
+    "**/vendor/**",
+    "vendor",
+    "/vendor/*",
+    ".env*",
+  },
+  callback = function()
+    vim.diagnostic.enable(false, { bufnr = 0 })
   end,
 })
 
@@ -56,11 +91,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufNewFile", {
-  pattern = {
-    "php",
-  },
-  callback = function()
-    vim.b.autoformat = false
-  end,
-})
+-- sort imports
+vim.api.nvim_create_user_command("OR", "call PhpSortUse()", {})

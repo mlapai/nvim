@@ -4,8 +4,6 @@
     "body": [
       "<?php",
       "",
-      "declare(strict_types=1);",
-      "",
       "$0"
     ]
   },
@@ -14,11 +12,15 @@
     "body": [
       "<?php",
       "",
-      "declare(strict_types=1);",
-      "",
       "final class ${1:className}",
       "{",
       "}$0"
+    ]
+  },
+  "declareStrict": {
+    "prefix": "dst",
+    "body": [
+      "declare(strict_types=1);$0"
     ]
   }
 }

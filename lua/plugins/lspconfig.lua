@@ -5,6 +5,7 @@ return {
       document_highlight = {
         enabled = false,
       },
+      autoformat = false,
       servers = {
         phpactor = {},
       },
@@ -39,6 +40,7 @@ return {
               ["completion_worse.completor.constructor.enabled"] = false,
               ["completion_worse.completor.local_variable.enabled"] = false,
               ["completion_worse.completor.worse_parameter.enabled"] = false,
+              ["language_server.diagnostic_outsource"] = false,
             },
           })
           return true

@@ -4,32 +4,33 @@ return {
     opts = {
       ensure_installed = {
         "phpactor",
+        "phpcs",
         "json-lsp",
         "html-lsp",
         "sqlls",
-        -- "yaml-language-server",
-        "bash-language-server",
         "css-lsp",
+        -- bash, shell
+        "bash-language-server",
+        "shfmt",
+        "shellcheck",
         -- javascript, typescript
-        "typescript-language-server",
+        "vtsls",
         "prettier",
         "eslint-lsp",
         -- docker
         "docker-compose-language-service",
         "dockerfile-language-server",
+        "hadolint",
         -- go
         "goimports",
         "gomodifytags",
-        --
-        "hadolint",
         "impl",
+        -- lua
         "lua-language-server",
-        "pyright",
+        -- other
         "stylua",
+        "pyright",
         "taplo",
-        "vtsls",
-        "shellcheck",
-        "shfmt",
       },
     },
   },
