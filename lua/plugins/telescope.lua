@@ -43,6 +43,11 @@ return {
           "--smart-case",
           "--no-ignore-vcs",
         },
+        mappings = {
+          i = {
+            ["<C-h>"] = require("telescope.actions").preview_scrolling_left,
+          },
+        },
       },
     },
   },
