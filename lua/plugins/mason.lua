@@ -5,6 +5,7 @@ return {
       ensure_installed = {
         "phpactor",
         "phpcs",
+        "php-debug-adapter",
         "json-lsp",
         "html-lsp",
         "sqlls",
