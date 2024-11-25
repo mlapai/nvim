@@ -7,6 +7,7 @@ vim.api.nvim_create_autocmd("FileType", {
   group = augroup("shiftWidth"),
   pattern = {
     "php",
+    "yaml",
     -- "json",
   },
   callback = function()
@@ -24,11 +25,11 @@ vim.api.nvim_create_autocmd("FileType", {
     "js",
     "ts",
     "yml",
-    "yaml",
+    "sh",
   },
   callback = function()
     vim.opt.shiftwidth = 2
-    vim.opt.tabstop = 2 -- A TAB character looks like 4 spaces
+    vim.opt.tabstop = 2 -- A TAB character looks like 2 spaces
     vim.opt.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
     vim.opt.softtabstop = 2 -- Number of spaces inserted instead of a TAB character
     vim.opt.shiftwidth = 2 -- Number of spaces inserted when indenting
