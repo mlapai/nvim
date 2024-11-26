@@ -94,3 +94,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- sort imports
 vim.api.nvim_create_user_command("OR", "call PhpSortUse()", {})
+
+-- srcery colorscheme highlight
+vim.api.nvim_set_hl(0, "Cursor", { fg = "NONE", bg = "NONE", ctermfg = "NONE", ctermbg = "NONE" })
+vim.api.nvim_set_hl(0, "Search", { ctermfg = 0, ctermbg = 3, fg = "#282828", bg = "#fabd2f" })
+vim.api.nvim_set_hl(0, "IncSearch", { ctermfg = 0, ctermbg = 3, fg = "#282828", bg = "#fabd2f" })
+vim.api.nvim_set_hl(0, "CurSearch", { ctermfg = 0, ctermbg = 202, fg = "#282828", bg = "#fe8019" })
